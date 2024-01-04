@@ -1,0 +1,159 @@
+.portfolioContent{
+    h1{
+        color: $white;
+        background: $color-1;
+        padding: 1rem;
+        border-radius: $borderRadius;
+        width: 100%;
+    }
+}
+
+.projects{
+    display: flex;
+
+    .project{
+        min-height: 150px;
+        max-height: 350px;
+        max-width: 200px;
+        background: $color-1;
+        border-radius: $borderRadius;
+        box-shadow: 0px 0px 10px $black;
+        margin: .5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 1fr 60%;
+        grid-template-areas: 
+        "1"
+        "2"
+        "3";
+
+        .icons{
+            grid-area: 1;
+            margin: 0 auto;
+            color: $white;
+            font-size: 2rem;
+            margin-top: .5rem;
+
+            i{
+                margin: 0.5rem;
+            }
+        }
+
+
+        h3{
+            grid-area: 2;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 15%;
+            color: $white;
+        }
+
+        img{
+            grid-area: 3;
+            height: 100%;
+            width: 100%;
+        }
+
+        .infos{
+            text-align: center;
+            i{
+                font-size: 2rem;
+                margin: 1rem;
+                color: $white;
+                cursor: pointer;
+                transition: 0.1s ease;
+
+                &:hover{
+                    font-size: 2.5rem;
+                    margin: .5rem;
+                }
+            }
+        }
+
+        .showInfo {
+              content: "";
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(39, 38, 38, 0.9); // Couleur d'ombrage souhaitée
+              z-index: 999; // Assurez-vous que l'ombrage est au-dessus de tout
+            }
+
+       .infosContent{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 450px;
+        padding: 2.5rem;
+        box-shadow: 0px 0px 50px $white;
+        background: $color-1;
+        border-radius: $borderRadius;
+        transform: translate(-32%, -50%);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25% 1fr 20%;
+        grid-template-areas: 
+        "A"
+        "C"
+        "D";
+
+
+
+        .head{
+            grid-area: A;
+            display: flex;
+            justify-content: space-between; /* Pour aligner verticalement aux extrémités */
+            align-items: flex-start; /* Pour aligner horizontalement à l'extrémité supérieure */
+        }
+
+        .sourceCode{
+            background: $white;
+            font-size: 1rem;
+            padding: .5rem;
+            border-radius: $borderRadius;
+            font-weight: bold;
+        }
+
+        p{
+            grid-area: C;
+            padding: .7rem;
+            font-size: 1.1rem;
+            text-align: justify;
+            font-weight: bolder;
+        }
+
+        .return{
+            grid-area: D;
+            text-align: center;
+            background: $white;
+            font-size: 1rem;
+            padding: .5rem;
+            border-radius: $borderRadius;
+            width: 180px;
+            height: 31px;
+            font-weight: bold;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+       }
+        
+      
+    }
+}
+
+@media screen and (max-width: 850px) {
+   .projects{
+    @include verticalCenter
+   }
+
+
+   .infosContent{
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    top: 25% !important;
+
+   }
+  }

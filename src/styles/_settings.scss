@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+$font: 'Josefin Sans', serif;
+
+
+$color-1: #c73232;
+$white: #ffffff;
+$black: #000000;
+$min-height: 95vh;
+$borderRadius: 15px;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin verticalCenter {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    margin: 1rem auto;
+    max-width: 1200px;
+    font-family: $font;
+    color: $black;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+}
+
+a:visited{
+    color: $black;
+}
+
+.contact, .home, .portfolio, .skills{
+    display: flex;
+
+    @media screen and (max-width: 850px) {
+        display: block !important;
+    }
+}
+
+.homeContent, .skillsContent, .portfolioContent, .contactContent{
+    margin-left: .4rem;
+
+    @media screen and (max-width: 850px){
+        margin-left: 0 !important;        
+    }
+}
